@@ -96,7 +96,7 @@ def main(args):
         # Write results with the specified delimiter to the specified file path
         with open(output_path, 'w') as out_file:
             write_final_output(out_file, delimiter, tmpFile)
-    sys.stdout.write('Successfully wrote results to %s.\n' % output_path)
+    sys.stdout.write('%s\n' % output_path)
     sys.exit()
 
 if __name__ == '__main__':
