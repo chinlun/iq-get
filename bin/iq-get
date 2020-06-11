@@ -36,7 +36,10 @@ def get_output_path(output_filename):
     Get the final output path
     :param output_filename: str Base filename for results
     """
-    output_path = '%s%s' % (os.path.expanduser('~/Desktop/'), output_filename,)
+    CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+    PARENT_DIR = os.path.abspath(os.path.join(CURRENT_DIR, os.pardir))
+    output_path = os.path.join(PARENT_DIR, 'results', output_filename)    
+    
     # If the filename already exists, ask to overwrite it
     if os.path.exists(output_path):
         sys.stdout.write("File %s already exists.\n\
